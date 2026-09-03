@@ -3,14 +3,26 @@
   "displayName": "Plain Sight Reader",
   "description": "Read PDF and EPUB e-books inside VS Code, disguised as code, docs, or logs.",
   "version": "0.1.1",
-  "publisher": "local",
+  "publisher": "saad-works",
   "license": "MIT",
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saad-works/plain-sight-reader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/saad-works/plain-sight-reader/issues"
+  },
+  "homepage": "https://github.com/saad-works/plain-sight-reader#readme",
   "engines": {
     "vscode": "^1.84.0"
   },
+  "galleryBanner": {
+    "color": "#1A1B26",
+    "theme": "dark"
+  },
   "categories": [
-    "Other",
-    "Visualization"
+    "Other"
   ],
   "keywords": [
     "ebook",

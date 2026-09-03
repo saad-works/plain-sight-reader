@@ -1,10 +1,14 @@
 .vscode/**
+.github/**
 src/**
+scripts/**
 node_modules/**
 esbuild.js
 tsconfig.json
 **/*.map
 .gitignore
+.gitattributes
+icon.svg
 *.pdf
 *.epub
 *.vsix

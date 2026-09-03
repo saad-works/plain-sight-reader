@@ -2,9 +2,10 @@
 
 > Read **PDF** and **EPUB** e‑books inside **VS Code** — rendered as source code, Markdown docs, or log output, so reading blends into a normal editor session.
 
-[![Version](https://img.shields.io/badge/version-0.1.1-blue.svg)](https://github.com/saad-works/plain-sight-reader/releases)
+[![Marketplace](https://img.shields.io/visual-studio-marketplace/v/saad-works.plain-sight-reader?label=Marketplace&logo=visualstudiocode&color=007ACC)](https://marketplace.visualstudio.com/items?itemName=saad-works.plain-sight-reader)
+[![Installs](https://img.shields.io/visual-studio-marketplace/i/saad-works.plain-sight-reader?label=installs)](https://marketplace.visualstudio.com/items?itemName=saad-works.plain-sight-reader)
+[![Rating](https://img.shields.io/visual-studio-marketplace/r/saad-works.plain-sight-reader?label=rating)](https://marketplace.visualstudio.com/items?itemName=saad-works.plain-sight-reader&ssr=false#review-details)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
-[![VS Code](https://img.shields.io/badge/VS%20Code-%5E1.84-007ACC.svg?logo=visualstudiocode)](https://code.visualstudio.com/)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#contributing)
 
 **Plain Sight Reader** is a Visual Studio Code extension for people who want to read a book in their development environment without it looking like they are reading a book. Import an e‑book, and its text appears in a normal editor tab — as commented source code (in the language of your choice), as a Markdown document, or as a stream of timestamped log lines. Page through it with the keyboard, jump between chapters, and hit a panic key to close it instantly.
@@ -73,15 +74,19 @@ No other runtime dependencies — the extension is bundled into a single file.
 
 ## Installation
 
-### Option A — install the packaged extension (recommended)
+### From the VS Code Marketplace (recommended)
 
-1. Download `plain-sight-reader-<version>.vsix` (from the repo's Releases, or build it yourself — see below).
-2. In VS Code: **Command Palette** (`Ctrl+Shift+P` / `Cmd+Shift+P`) → **Extensions: Install from VSIX…** → choose the file.
+- In VS Code: open **Extensions** (`Ctrl+Shift+X`), search **"Plain Sight Reader"**, click **Install**.
+- Or from a terminal: `code --install-extension saad-works.plain-sight-reader`
+- Or open the [Marketplace listing](https://marketplace.visualstudio.com/items?itemName=saad-works.plain-sight-reader) and click **Install**.
+
+### From a `.vsix` file
+
+1. Download `plain-sight-reader-<version>.vsix` from the [Releases](https://github.com/saad-works/plain-sight-reader/releases) page (or build it — see below).
+2. **Command Palette** (`Ctrl+Shift+P` / `Cmd+Shift+P`) → **Extensions: Install from VSIX…** → choose the file.
 3. **Developer: Reload Window**.
 
-The extension is now active in **every** VS Code window on that machine. Repeat on other machines with the same `.vsix` — there is nothing to sync or sign in to.
-
-### Option B — build from source
+### Build from source
 
 ```bash
 git clone https://github.com/saad-works/plain-sight-reader.git
@@ -91,9 +96,9 @@ npm run compile          # bundle to dist/extension.js
 npx @vscode/vsce package # produces plain-sight-reader-<version>.vsix
 ```
 
-Then install the generated `.vsix` as in Option A.
+Then install the generated `.vsix` as described above.
 
-### Option C — run it in development
+### Run it in development
 
 Open the folder in VS Code and press <kbd>F5</kbd>. A second VS Code window (the *Extension Development Host*) launches with the extension loaded. Use `npm run watch` for incremental rebuilds.
 
@@ -301,7 +306,7 @@ VS Code's extension host only runs JavaScript/TypeScript. You can still *display
 Not automatically. Copy the same `.vsix` to each machine and re‑import, or copy the extension's global storage folder manually.
 
 **Is it on the VS Code Marketplace?**
-Not yet — install from the `.vsix` for now.
+Yes — search "Plain Sight Reader" in the Extensions view, or install `saad-works.plain-sight-reader`. A `.vsix` is also attached to each GitHub release.
 
 ---
 
@@ -338,7 +343,7 @@ No chapter headings were detected in the PDF, so pages were grouped in fixed blo
 - [ ] Per‑book disguise/language overrides
 - [ ] Adjustable "words per page" and font‑size‑aware pagination
 - [ ] Better PDF structure detection (table of contents / outline)
-- [ ] Optional Marketplace release
+- [ ] Publish to Open VSX (Cursor / VSCodium / Gitpod)
 
 Suggestions welcome — open an issue.
 
