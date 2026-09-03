@@ -1,5 +1,6 @@
 * text=auto eol=lf
 *.vsix binary
 *.png binary
+*.gif binary
 *.pdf binary
 *.epub binary

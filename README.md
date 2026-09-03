@@ -8,6 +8,8 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#contributing)
 
+![Plain Sight Reader demo — importing a book and reading it as C# and Markdown in the editor](https://raw.githubusercontent.com/saad-works/plain-sight-reader/main/media/demo.gif)
+
 **Plain Sight Reader** is a Visual Studio Code extension for people who want to read a book in their development environment without it looking like they are reading a book. Import an e‑book, and its text appears in a normal editor tab — as commented source code (in the language of your choice), as a Markdown document, or as a stream of timestamped log lines. Page through it with the keyboard, jump between chapters, and hit a panic key to close it instantly.
 
 It is a focused, offline, no‑telemetry **e‑book reader for developers** — a discreet way to read novels, non‑fiction, RFCs, documentation, or long‑form articles during downtime, commutes on a remote box, or a slow CI run.
