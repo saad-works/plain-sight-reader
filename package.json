@@ -2,7 +2,7 @@
   "name": "plain-sight-reader",
   "displayName": "Plain Sight Reader",
   "description": "Read PDF and EPUB e-books inside VS Code, disguised as code, docs, or logs.",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "publisher": "saad-works",
   "license": "MIT",
   "icon": "icon.png",

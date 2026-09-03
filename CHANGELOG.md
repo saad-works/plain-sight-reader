@@ -3,6 +3,11 @@
 All notable changes to **Plain Sight Reader** are documented here.
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/).
 
+## [0.1.3]
+
+### Docs
+- Corrected a keystroke caption in the demo animation (`Ctrl+Shift+P`).
+
 ## [0.1.2]
 
 ### Docs
