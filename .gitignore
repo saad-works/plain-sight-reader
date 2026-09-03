@@ -1,0 +1,9 @@
+node_modules/
+dist/
+out/
+*.vsix
+.vscode-test/
+
+# local test e-books — don't commit copyrighted material
+*.pdf
+*.epub

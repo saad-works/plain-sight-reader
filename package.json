@@ -1,0 +1,112 @@
+{
+  "name": "plain-sight-reader",
+  "displayName": "Plain Sight Reader",
+  "description": "Read PDF and EPUB e-books inside VS Code, disguised as code, docs, or logs.",
+  "version": "0.1.1",
+  "publisher": "local",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "categories": [
+    "Other",
+    "Visualization"
+  ],
+  "keywords": [
+    "ebook",
+    "epub",
+    "pdf",
+    "reader",
+    "book",
+    "read",
+    "novel",
+    "disguise",
+    "focus",
+    "productivity"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [],
+  "contributes": {
+    "commands": [
+      { "command": "plainSightReader.importBook", "title": "Import Book…", "category": "Plain Sight Reader" },
+      { "command": "plainSightReader.openBook", "title": "Open Book…", "category": "Plain Sight Reader" },
+      { "command": "plainSightReader.goToChapter", "title": "Go to Section…", "category": "Plain Sight Reader" },
+      { "command": "plainSightReader.removeBook", "title": "Remove Book…", "category": "Plain Sight Reader" },
+      { "command": "plainSightReader.nextPage", "title": "Next Page", "category": "Plain Sight Reader" },
+      { "command": "plainSightReader.prevPage", "title": "Previous Page", "category": "Plain Sight Reader" },
+      { "command": "plainSightReader.nextChapter", "title": "Next Section", "category": "Plain Sight Reader" },
+      { "command": "plainSightReader.prevChapter", "title": "Previous Section", "category": "Plain Sight Reader" },
+      { "command": "plainSightReader.cycleDisguise", "title": "Cycle Disguise Mode", "category": "Plain Sight Reader" },
+      { "command": "plainSightReader.panic", "title": "Panic (Close Reader)", "category": "Plain Sight Reader" }
+    ],
+    "keybindings": [
+      { "command": "plainSightReader.nextPage", "key": "ctrl+alt+.", "when": "plainSightReader.active" },
+      { "command": "plainSightReader.prevPage", "key": "ctrl+alt+,", "when": "plainSightReader.active" },
+      { "command": "plainSightReader.nextChapter", "key": "ctrl+alt+shift+.", "when": "plainSightReader.active" },
+      { "command": "plainSightReader.prevChapter", "key": "ctrl+alt+shift+,", "when": "plainSightReader.active" },
+      { "command": "plainSightReader.cycleDisguise", "key": "ctrl+alt+m", "when": "plainSightReader.active" },
+      { "command": "plainSightReader.panic", "key": "ctrl+alt+q" }
+    ],
+    "configuration": {
+      "title": "Plain Sight Reader",
+      "properties": {
+        "plainSightReader.disguiseMode": {
+          "type": "string",
+          "enum": ["code", "markdown", "log"],
+          "enumDescriptions": [
+            "Render book text as comment lines inside fake source code.",
+            "Render book text as a Markdown document.",
+            "Render book text as timestamped log output."
+          ],
+          "default": "code",
+          "description": "How the book text is displayed in the editor."
+        },
+        "plainSightReader.codeLanguage": {
+          "type": "string",
+          "default": "typescript",
+          "description": "Language used for the 'code' disguise (e.g. typescript, javascript, csharp, java, go, rust, python, ruby)."
+        },
+        "plainSightReader.charsPerPage": {
+          "type": "number",
+          "default": 1600,
+          "minimum": 400,
+          "description": "Approximate number of characters shown per page."
+        },
+        "plainSightReader.wrapColumn": {
+          "type": "number",
+          "default": 100,
+          "minimum": 40,
+          "description": "Line wrap width for the 'code' disguise."
+        },
+        "plainSightReader.showStatusBar": {
+          "type": "boolean",
+          "default": false,
+          "description": "Show a subtle reading-progress indicator in the status bar."
+        },
+        "plainSightReader.panicCommand": {
+          "type": "string",
+          "default": "",
+          "description": "Optional command id to run after the reader tab is closed by Panic."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "package": "node esbuild.js --production",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "jszip": "^3.10.1",
+    "node-html-parser": "^6.1.13",
+    "pdf-parse": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/vscode": "^1.84.0",
+    "esbuild": "^0.23.0",
+    "typescript": "^5.5.4"
+  }
+}
